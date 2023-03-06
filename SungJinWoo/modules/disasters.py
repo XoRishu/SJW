@@ -56,7 +56,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("Already an A-Rank Hunter")
+        message.reply_text("Already A Dragon Rank")
         return ""
 
     if user_id in DEMONS:
@@ -65,7 +65,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "You are A-Rank Hunter now"
+        rt += "You are A Dragon Rank now"
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -172,17 +172,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is an A-Rank Hunter, Lets Make Him IGnite"
+        rt += "This member is A Dragon, Lets Make Him Vizard"
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "You are our friend, but it's for your own good if you become a IGNITE instead."
+        rt += "You are a Demon, but it's for your own good if you become a Vizards instead."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already a true IGNITE")
+        message.reply_text("This user is already a true Vizard")
         return ""
 
     data["whitelists"].append(user_id)
@@ -192,7 +192,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        f"{rt}\nSuccessfully promoted {user_member.first_name} to a ranked IGNITE!"
+        f"{rt}\nSuccessfully promoted {user_member.first_name} to a ranked Vizard!"
     )
 
 
@@ -227,22 +227,22 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "You were an A-Rank Hunter, but now you are just a classmate"
+        rt += "You were A Dragon, but now you are just a demon"
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "Let's become classmates instead."
+        rt += "Let's become Vizard instead."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "This user is already a IGNITE, we can be classmates as well.."
+        rt += "This user is already a Vizard, You can be Demon as well.."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
     if user_id in TIGERS:
-        message.reply_text("This user is already our classmate.")
+        message.reply_text("This user is already a tiger.")
         return ""
 
     data["tigers"].append(user_id)
@@ -426,7 +426,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>IGNITE:</b>\n\n"
+    reply = "<b>Vizard:</b>\n\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel from System...</code>", parse_mode=ParseMode.HTML,
     )
@@ -445,7 +445,7 @@ def whitelistlist(update: Update, context: CallbackContext):
 
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Classmates:</b>\n\n"
+    reply = "<b>Tigers:</b>\n\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel from System...</code>", parse_mode=ParseMode.HTML,
     )
@@ -484,7 +484,7 @@ def sudolist(update: Update, context: CallbackContext):
         "<code>Gathering intel from System..</code>", parse_mode=ParseMode.HTML,
     )
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>A-Rank Hunters:</b>\n\n"
+    reply = "<b>Dragons:</b>\n\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -502,7 +502,7 @@ def devlist(update: Update, context: CallbackContext):
         "<code>Gathering intel from System..</code>", parse_mode=ParseMode.HTML,
     )
     true_dev = list(set(DEV_USERS) - {OWNER_ID})
-    reply = "<b>Family Members:</b>\n\n"
+    reply = "<b>Devs:</b>\n\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
