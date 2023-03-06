@@ -86,23 +86,23 @@ def ban(update: Update, context: CallbackContext) -> str:
         return log_message
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
-            message.reply_text("Trying to put me against my Onichan huh?")
+            message.reply_text("Trying to put me against my Owner?")
         elif user_id in DEV_USERS:
             message.reply_text("I can't act against our family.")
         elif user_id in DRAGONS:
             message.reply_text(
-                "Fighting our A-Rank Hunters here will put user lives at risk."
+                "Fighting our Dragons here will put user lives at risk."
             )
         elif user_id in DEMONS:
             message.reply_text(
-                "Bring an order from Onichan to fight our friends."
+                "Bring an order from @Kanna_Support to fight our demons."
             )
         elif user_id in TIGERS:
             message.reply_text(
-                "Bring an order from Onichan to fight our classmates"
+                "Bring an order from @Kanna_Support to fight our Tigers"
             )
         elif user_id in WOLVES:
-            message.reply_text("IGNITE access make them ban immune!")
+            message.reply_text("Vizards access make them ban immune!")
         else:
             message.reply_text("⚠️ Cannot banned admin.")
         return log_message
