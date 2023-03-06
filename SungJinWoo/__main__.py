@@ -81,20 +81,17 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 HELP_MSG = "Click the button below to get help menu in your pm hihi~"
-START_MSG = "*Hie Onichwannnn~ UwU* I am well and alive ;)"
+START_MSG = "*Cutest Dragon Is Here* I am well and alive ;)"
 
-HELP_IMG = "https://telegra.ph/file/9dfcdab5244a61b323210.jpg"
-START_IMG = "https://telegra.ph/file/eb8617465e7a62650f862.jpg"
+HELP_IMG = "https://telegra.ph/file/7a4477c72aa437486d55c.jpg"
+START_IMG = "https://telegra.ph/file/8a309e75c716311a2b8fe.jpg"
     
 PM_START_TEXT = """
-  ⫸ [SungJinWoo](https://telegra.ph/file/7ba6536e75495cdc6ceb1.jpg) ⫷
+  ⫸ [Kanna](https://telegra.ph/file/c027ed484c1d5a0878d01.jpg) ⫷
 Konnichiwa, I am {}
- 
 I am an Anime themed group management bot with some fun extras ;)
 
 Want to see my powers? hehe, use /help or commands button below."""
-
-
 GROUP_START_TEXT = """
 I'm awake already !
 Haven't slept since: {} 
@@ -103,19 +100,19 @@ Haven't slept since: {}
 buttons = [
     [
                         InlineKeyboardButton(
-                            text=f"Summon Meow ➕",
+                            text=f"Add Me ➕",
                             url=f"t.me/{BOT_USERNAME}?startgroup=true")
                     ],
                    [
                        InlineKeyboardButton(text="📓 Commands", callback_data="help_back"),
-                       InlineKeyboardButton(text="Source 🌐", url=f"https://github.com/RimuruDemonlord/SungJinWoo")
+                       InlineKeyboardButton(text="Source 🌐", url=f"https://github.com/XoRishu")
                     ],
                     [                  
                        InlineKeyboardButton(
                              text="Support 🥂",
                              url=f"https://t.me/{SUPPORT_CHAT}"),
                        InlineKeyboardButton(
-                             text="Updates 🏃‍♂️",
+                             text="Powered By 🏃‍♂️",
                              url=f"https://t.me/{UPDATES_CHANNEL}")
                      ], 
     ]
@@ -248,7 +245,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            START_IMG, caption= "<code>OwO Onichan! I am ready to play, hehe~</code>: <code>{}</code>".format(
+            START_IMG, caption= "<code>I Am Alive! Stop Gawking You Perverts, hehe~</code>: <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -261,7 +258,7 @@ def start(update: Update, context: CallbackContext):
                   InlineKeyboardButton(text="Updates 🌻", url=f"https://telegram.dog/{UPDATES_CHANNEL}")
                       ],
                     [
-                       InlineKeyboardButton(text="Alliance 🌐", url="https://telegram.dog/Kaizuryu")
+                       InlineKeyboardButton(text="Developer", url="https://t.me/MolesteRishu")
                   ]
                 ]
             ),
