@@ -182,25 +182,25 @@ def get_user_info(chat: Chat, user: User) -> str:
             if result.custom_title:
                 text += f"\n\nThis user holds the title <b>{result.custom_title}</b> here."
     if user.id == OWNER_ID:        
-        text += "\n\n<code>Our Cute Neko Arsh</code> :3"
+        text += "\n\n<code>My Owner fr</code> :3"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\n<code>This user is a part of our family</code> 🌻"
+        text += "\n\n<code>This user is my dev</code> ☆"
         disaster_level_present = True
     elif user.id in SUDO_USERS:
-        text += "\n\n<code>One of A-Rank Hunters, touch him and you are dead meat</code>"
+        text += "\n\n<code>One of our dragons, touch him and you are dead meat</code>"
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
-        text += "\n\n<code>This user is our friend</code> ✨"
+        text += "\n\n<code>This user is a demon</code> ✨"
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\n<code>One of my classmates</code> :p"
+        text += "\n\n<code>One of our tigers</code> :p"
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
-        text += "\n\n<code>Member of SungJinWoo Tech, totally cool right?</code>"
+        text += "\n\n<code>Member of Vizard Tech, totally cool right?</code>"
         disaster_level_present = True
     if disaster_level_present:
-        text += ' [<a href="https://t.me/TheSoloMonarch/13">?</a>]'
+        text += ' [<a href="https://t.me/TheVizards">?</a>]'
     text += "\n"
     for mod in USER_INFO:
         if mod.__mod_name__ == "Users":
@@ -300,8 +300,8 @@ def stats(update, context):
         update.effective_message.reply_text(status +
             "\n*Bot statistics*:\n"
             + "\n".join([mod.__stats__() for mod in STATS]) +
-            "\n\n[⍙ GitHub](https://github.com/RimuruDemonlord/SungJinWoo) | [Telegram](https://t.me/SungJinWoo_Robot)\n\n" +
-            "╘══「 by [Kaizuryu](t.me/Kaizuryu) 」\n",
+            "\n\n[⍙ GitHub](https://github.com/XoRishu) | [Telegram](https://t.me/KannProBot)\n\n" +
+            "╘══「 by [Vizards](t.me/TheVizards) 」\n",
         parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     except BaseException:
         update.effective_message.reply_text(
@@ -311,9 +311,9 @@ def stats(update, context):
                         "\n*Bot statistics*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + "\n\n⍙ [GitHub](https://github.com/RimuruDemonlord/SungJinWoo) | [Telegram](https://t.me/SungJinWoo_Robot)\n\n"
+                    + "\n\n⍙ [GitHub](https://github.com/XoRishu) | [Telegram](https://t.me/KannaProBot)\n\n"
                 )
-                + "╘══「 by [Kaizuryu](t.me/Kaizuryu) 」\n"
+                + "╘══「 by [Vizards](t.me/TheVizards) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,         
             disable_web_page_preview=True,
