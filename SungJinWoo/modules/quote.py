@@ -1,13 +1,13 @@
-#@Kaizuryu @Xelcius
+#@TheVizards @MolesteRishu
 
 import os
 import time
 from datetime import datetime as dt
 from random import choice
 from shutil import rmtree
-from KannaKamui import quotly
-from KannaKamui.services.quotehelper import eor
-from KannaKamui.events import register  
+from SungJinWoo import quotly
+from SungJinWoo.services.quotehelper import eor
+from SungJinWoo.events import register  
 
 @register(pattern="^/q(?: |$)(.*)")
 async def quott_(event):
